@@ -82,13 +82,6 @@ objetivo = st.number_input('Objetivo alcançado no mês', step=int(1))
 fxp3="{:.0f}".format(objetivo) 
 st.write(f"<span style='font-family: Barlow; font-size: 14px; color: black;'>Você selecionou um objetivo de {fxp3} %.</span>", unsafe_allow_html=True)
 
-
-categoria = 'G10'
-posicao = 17
-faturamento = 4000000
-incremento = 60000000
-objetivo = 150
-
 # Calcular nova posição
 
 if st.button('Calcular nova posição'):
