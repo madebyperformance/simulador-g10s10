@@ -118,7 +118,7 @@ if st.button('Calcular nova posição'):
                 df_g10['KPI333'] = ((df_g10['KPI33'] - Valor_minimo_incremento_G10) / (Valor_maximo_incremento_G10 - Valor_minimo_incremento_G10) * 2 - 1 + 1) * 100
                 df_g10['KPI444'] = ((df_g10['KPI44'] - Valor_minimo_fat_G10) / (Valor_maximo_fat_G10 - Valor_minimo_fat_G10) * 2 - 1 + 1) * 100
                 df_g10['KPI555'] = ((df_g10['KPI5'] - Valor_minimo_atingimento_G10) / (Valor_maximo_atingimento_G10 - Valor_minimo_atingimento_G10) * 2 - 1 + 1) * 100
-                df_g10['KPI6666'] = df_g10['KPI44']/10000000
+                df_g10['KPI6666'] = df_g10['KPI44']/1000000000
                 
                 # pesos G10
                 P_fat_G10 = 0.4
