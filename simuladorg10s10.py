@@ -84,6 +84,15 @@ st.write(f"<span style='font-family: Barlow; font-size: 14px; color: black;'>Voc
 
 # Calcular nova posição
 
+
+
+posicao = 15
+faturamento = 120000
+incremento = 14999998
+objetivo = 80
+
+
+
 if st.button('Calcular nova posição'):
     if posicao == 0:
       st.write("<span style='font-family: Barlow; color: rgb(255, 0, 0);font-size: 20px;'>Por favor, insira sua posição atual para começar a simulação.</span>", unsafe_allow_html=True) 
@@ -170,13 +179,14 @@ if st.button('Calcular nova posição'):
                 Valor_minimo_fat_S10 = df_s10['KPI44'].min()
                 Valor_maximo_fat_S10 = df_s10['KPI44'].max()
 
-                Valor_minimo_atingimento_S10 = df_s10['KPI55'].min()
-                Valor_maximo_atingimento_S10 = df_s10['KPI55'].max()
+                Valor_minimo_atingimento_S10 = df_s10['KPI5'].min()
+                Valor_maximo_atingimento_S10 = df_s10['KPI5'].max()
 
                 # Aplicando a fórmula
                 df_s10['KPI333'] = ((df_s10['KPI33'] - Valor_minimo_incremento_S10) / (Valor_maximo_incremento_S10 - Valor_minimo_incremento_S10) * 2 - 1 + 1) * 100
                 df_s10['KPI444'] = ((df_s10['KPI44'] - Valor_minimo_fat_S10) / (Valor_maximo_fat_S10 - Valor_minimo_fat_S10) * 2 - 1 + 1) * 100
-                df_s10['KPI555'] = ((df_s10['KPI55'] - Valor_minimo_atingimento_S10) / (Valor_maximo_atingimento_S10 - Valor_minimo_atingimento_S10) * 2 - 1 + 1) * 100
+                df_s10['KPI555'] = ((df_s10['KPI5'] - Valor_minimo_atingimento_S10) / (Valor_maximo_atingimento_S10 - Valor_minimo_atingimento_S10) * 2 - 1 + 1) * 100
+                df_s10['KPI6666'] = df_s10['KPI44']/1000000000
                 
                 # pesos S10
                 P_fat_S10 = 0.2
@@ -184,16 +194,15 @@ if st.button('Calcular nova posição'):
                 P_ating_S10 = 0.3
 
                 # Calculando o score
-                df_s10['KPI1212'] = (df_s10['KPI44'] * P_fat_S10) + (df_s10['KPI33'] * P_inc_S10) + (df_s10['KPI55'] * P_ating_S10)
+                df_s10['KPI1212'] = (df_s10['KPI44'] * P_fat_S10) + (df_s10['KPI33'] * P_inc_S10) + (df_s10['KPI555'] * P_ating_S10) +(df_s10['KPI6666'])
                 df_s10['KPI1313'] = df_s10['KPI1212'].rank(ascending=False)
-                
                 df_s10 = df_s10.sort_values(by='KPI1313', ascending=True)
                 
                 df_s10['KPI1313'] = df_s10['KPI1313'].astype(int)
                 df_s10['KPI1'] = df_s10['KPI1'].astype(int)
                 
-                ranking_antigo_s10 = df_s10.loc[df_s10['KPI1'] == posicao, 'KPI1'].loc[0]
-                ranking_novo_s10 = df_s10.loc[df_s10['KPI1'] == posicao, 'KPI1313'].loc[0]
+                ranking_antigo_s10 = df_s10.loc[df_s10['KPI1'] == posicao, 'KPI1'].iloc[0]
+                ranking_novo_s10 = df_s10.loc[df_s10['KPI1'] == posicao, 'KPI1313'].iloc[0]
 
                 if ranking_novo_s10 <= 10:
                     if posicao > 10:
