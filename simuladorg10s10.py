@@ -184,7 +184,7 @@ if st.button('Calcular nova posição'):
                 P_ating_S10 = 0.3
 
                 # Calculando o score
-                df_s10['KPI1212'] = (df_s10['KPI44'] * P_fat_S10) + (df_s10['KPI33'] * P_inc_S10) + (df_s10['KPI555'] * P_ating_S10) +(df_s10['KPI6666'])
+                df_s10['KPI1212'] = (df_s10['KPI444'] * P_fat_S10) + (df_s10['KPI333'] * P_inc_S10) + (df_s10['KPI555'] * P_ating_S10) +(df_s10['KPI6666'])
                 df_s10['KPI1313'] = df_s10['KPI1212'].rank(ascending=False)
                 df_s10 = df_s10.sort_values(by='KPI1313', ascending=True)
                 
