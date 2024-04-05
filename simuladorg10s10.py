@@ -85,14 +85,6 @@ st.write(f"<span style='font-family: Barlow; font-size: 14px; color: black;'>Voc
 # Calcular nova posição
 
 
-
-posicao = 15
-faturamento = 120000
-incremento = 14999998
-objetivo = 80
-
-
-
 if st.button('Calcular nova posição'):
     if posicao == 0:
       st.write("<span style='font-family: Barlow; color: rgb(255, 0, 0);font-size: 20px;'>Por favor, insira sua posição atual para começar a simulação.</span>", unsafe_allow_html=True) 
