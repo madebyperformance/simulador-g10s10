@@ -149,7 +149,7 @@ if st.button('Calcular nova posição'):
           
           
         if categoria == 'S10':
-                df_s10 = df[df['KPI2'] == 'G10']
+                df_s10 = df[df['KPI2'] == 'S10']
                 
                 df_s10['KPI44'] = (df_s10['KPI4']) / q1
                 df_s10['KPI44'] = df_s10['KPI4'] + df_s10['KPI44']
