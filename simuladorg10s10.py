@@ -42,7 +42,7 @@ st.write("<div style='text-align: center;'> <span style='font-family: Barlow; fo
 
 def link():
     st.sidebar.markdown("<a href='https://madebyperformance-simuladorlider-lider-mxv3v4.streamlit.app/' target='_blank' style='text-decoration: none; font-family: Barlow; font-weight: bold; font-size: 22px; color: white;'>SIMULADOR PARTNERSHIP</a>", unsafe_allow_html=True)
-    st.sidebar.markdown("<span style='font-family: Barlow; color: white; font-size: 14px;'>Clique acima para ser redirecionado ao Simulador do Partnership Líder 2023.</span>", unsafe_allow_html=True)
+    st.sidebar.markdown("<span style='font-family: Barlow; color: white; font-size: 14px;'>Clique acima para ser redirecionado ao Simulador do Partnership Líder 2024.</span>", unsafe_allow_html=True)
     
 link()
 
@@ -83,8 +83,6 @@ fxp3="{:.0f}".format(objetivo)
 st.write(f"<span style='font-family: Barlow; font-size: 14px; color: black;'>Você selecionou um objetivo de {fxp3} %.</span>", unsafe_allow_html=True)
 
 # Calcular nova posição
-
-
 if st.button('Calcular nova posição'):
     if posicao == 0:
       st.write("<span style='font-family: Barlow; color: rgb(255, 0, 0);font-size: 20px;'>Por favor, insira sua posição atual para começar a simulação.</span>", unsafe_allow_html=True) 
